@@ -24,10 +24,10 @@
 /wd4838
 /w44668
 /I "C:\Program Files\Epic Games\UE_4.18\Engine\Source"
-/I "C:\Users\Randa\Documents\Game Development\CoopGame\CoopGame\Source"
-/I "C:\Users\Randa\Documents\Game Development\CoopGame\CoopGame\Source\CoopGame\Public"
-/I "C:\Users\Randa\Documents\Game Development\CoopGame\CoopGame\Intermediate\Build\Win64\UE4Editor\Inc\CoopGame"
-/I "C:\Users\Randa\Documents\Game Development\CoopGame\CoopGame\Source\CoopGame"
+/I C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Source
+/I C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Source\CoopGame\Public
+/I C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Inc\CoopGame
+/I C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Source\CoopGame
 /I "C:\Program Files\Epic Games\UE_4.18\Engine\Source\Runtime\Core\Public"
 /I "C:\Program Files\Epic Games\UE_4.18\Engine\Source\Runtime\Core\Public\Internationalization"
 /I "C:\Program Files\Epic Games\UE_4.18\Engine\Source\Runtime\Core\Public\Async"
@@ -360,9 +360,9 @@
 /FI"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h"
 /Yu"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h"
 /Fp"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.pch"
-"C:\Users\Randa\Documents\Game Development\CoopGame\CoopGame\Source\CoopGame\CoopGameGameModeBase.cpp"
-/FI"C:\Users\Randa\Documents\Game Development\CoopGame\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\Definitions.CoopGame.h"
-/Fo"C:\Users\Randa\Documents\Game Development\CoopGame\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\CoopGameGameModeBase.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Source\CoopGame\CoopGameGameModeBase.cpp"
+/FI"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\Definitions.CoopGame.h"
+/Fo"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\CoopGameGameModeBase.cpp.obj"
 /TP
 /GR-
 /W4

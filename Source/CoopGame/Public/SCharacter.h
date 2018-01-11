@@ -30,6 +30,12 @@ protected:
 	/*sets up players movement*/
 	void MoveRight(float Value);
 
+	/*Function for the players initial crouch movement*/
+	void BeginCrouch();
+
+	/*Function for the players crouch movement*/
+	void EndCrouch();
+
 	/*Creating a Camera component*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UCameraComponent* CameraComp;
