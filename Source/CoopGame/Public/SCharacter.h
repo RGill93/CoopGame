@@ -6,16 +6,20 @@
 #include "GameFramework/Character.h"
 #include "SCharacter.generated.h"
 
+class UCameraComponent;
+
 UCLASS()
 class COOPGAME_API ASCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
+
 	// Sets default values for this character's properties
 	ASCharacter();
 
 protected:
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
@@ -24,7 +28,13 @@ protected:
 
 	/*sets up players movement*/
 	void MoveRight(float Value);
+
+	/*Creating a Camera component*/
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	UCameraComponent* CameraComp;
+
 public:	
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
