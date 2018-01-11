@@ -1,0 +1,3 @@
+C:\Users\Randa\Documents\Game Development\CoopGame\CoopGame\Source\CoopGame\CoopGame.Build.cs
+C:\Users\Randa\Documents\Game Development\CoopGame\CoopGame\Source\CoopGame.Target.cs
+C:\Users\Randa\Documents\Game Development\CoopGame\CoopGame\Source\CoopGameEditor.Target.cs
