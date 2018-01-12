@@ -35,7 +35,7 @@ protected:
 
 	/*Function for the players crouch movement*/
 	void EndCrouch();
-
+	
 	/*Creating a Camera component*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	UCameraComponent* CameraComp;
@@ -51,5 +51,10 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	/**
+	 * @return players eye location
+	 */
+	virtual FVector GetPawnViewLocation() const override;
 	
 };
