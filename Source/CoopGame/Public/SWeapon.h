@@ -20,16 +20,14 @@ public:
 	ASWeapon();
 
 protected:
-	// Called when the game starts or when spawned
+
 	virtual void BeginPlay() override;
 
 	/*created a skeletal mesh for the weapon*/
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
-	USkeletalMeshComponent* MeshComp;
+	USkeletalMeshComponent* MeshComp;	
 
-	/*Function for weapon fire*/
-	UFUNCTION(BlueprintCallable, Category = "Weapon")
-	virtual void Fire();
+	void PlayFireEffects(FVector TraceEnd);
 
 	/*Damage of the actor*/
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
@@ -39,20 +37,47 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	FName MuzzleSocketName;
 
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	FName TracerTargetName;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	UParticleSystem* MuzzleEffect;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
-	UParticleSystem* ImpactEffect;
+	UParticleSystem* DefaultImpactEffect;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	UParticleSystem* FleshImpactEffect;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	UParticleSystem* TracerEffect;
 
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
-	FName TracerTargetName;
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+	TSubclassOf<UCameraShake> FireCamShake;	
+
+	// BaseDamage for head shot multiplier
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+	float BaseDamage;
+
+	/*Function for weapon fire*/
+	virtual void Fire();
+
+	FTimerHandle TimerHandle_TimeBetweenShots;
+
+	float LastFireTime;
+
+	/*Rate of fire RPM*/
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+	float RateOfFire;
+
+	// Derived from rate of fire
+	float TimeBetweenShots;
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;	
+
+	// functions to make the weapon fully automatic
+	void StartFire();
+
+	void StopFire();
 	
 };

@@ -8,6 +8,7 @@
 
 class UCameraComponent;
 class USpringArmComponent;
+class ASWeapon;
 
 UCLASS()
 class COOPGAME_API ASCharacter : public ACharacter
@@ -44,6 +45,39 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USpringArmComponent* SpringArmComp;
 
+	/*Checks if the player is aiming down sights*/
+	bool bWantsToZoom;
+
+	/*Allows the player to set there values in the editor*/
+	UPROPERTY(EditDefaultsOnly, Category = "Player")
+	float ZoomedFOV;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Player", meta =(ClampMin = 0.1, ClampMax = 100))
+	float ZoomInterpSpeed;
+
+	/*Default FOV set during begin play*/	
+	float DefaultFOV;
+
+	/*Function for when the begin begins zooming*/
+	void BeginZoom();
+
+	/*Function for when the begin ends zooming*/
+	void EndZoom();
+
+	ASWeapon* CurrentWeapon;
+
+	/*Function for player fire*/
+	void StartFire();
+
+	void StopFire();
+
+	UPROPERTY(EditDefaultsOnly, Category = "Player")
+	TSubclassOf<ASWeapon> StarterWeaponClass;
+
+	UPROPERTY(VisibleDefaultsOnly, Category = "Player")
+	FName WeaponAttachSocketName;
+	
+
 public:	
 
 	// Called every frame
@@ -56,5 +90,5 @@ public:
 	 * @return players eye location
 	 */
 	virtual FVector GetPawnViewLocation() const override;
-	
+		
 };
