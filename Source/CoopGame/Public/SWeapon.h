@@ -10,6 +10,22 @@ class USkeletalMeshComponent;
 class UDamageType;
 class UParticleSystem;
 
+// contains information of a single hit scan weapon lince trace
+USTRUCT()
+struct FHitScanTrace
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY()
+	FVector_NetQuantize TraceFrom;
+
+	UPROPERTY()
+	FVector_NetQuantize TraceTo;
+
+};
+
 UCLASS()
 class COOPGAME_API ASWeapon : public AActor
 {
@@ -62,6 +78,14 @@ protected:
 	/*Function for weapon fire*/
 	virtual void Fire();
 
+	/*Function for server fire
+	*@param server pushes requested to hosted server
+	*@param reliable will eventually get to the server
+	*@param WithValidation is when its specified with a server
+	*/
+	UFUNCTION(Server, Reliable, WithValidation)
+	void ServerFire();
+
 	FTimerHandle TimerHandle_TimeBetweenShots;
 
 	float LastFireTime;
@@ -72,6 +96,12 @@ protected:
 
 	// Derived from rate of fire
 	float TimeBetweenShots;
+
+	UPROPERTY(ReplicatedUsing=OnRep_HitScanTrace)
+	FHitScanTrace HitScanTrace;
+
+	UFUNCTION()
+	void OnRep_HitScanTrace();
 
 public:	
 

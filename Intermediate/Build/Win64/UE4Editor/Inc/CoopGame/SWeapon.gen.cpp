@@ -17,14 +17,41 @@ void EmptyLinkFunctionForGeneratedCodeSWeapon() {}
 	COOPGAME_API UClass* Z_Construct_UClass_ASWeapon();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_CoopGame();
+	COOPGAME_API UFunction* Z_Construct_UFunction_ASWeapon_ServerFire();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraShake_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UDamageType_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 // End Cross Module References
+	static FName NAME_ASWeapon_ServerFire = FName(TEXT("ServerFire"));
+	void ASWeapon::ServerFire()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_ASWeapon_ServerFire),NULL);
+	}
 	void ASWeapon::StaticRegisterNativesASWeapon()
 	{
+		UClass* Class = ASWeapon::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "ServerFire", (Native)&ASWeapon::execServerFire },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	UFunction* Z_Construct_UFunction_ASWeapon_ServerFire()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+#if WITH_METADATA
+			static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+				{ "ModuleRelativePath", "Public/SWeapon.h" },
+				{ "ToolTip", "Function for server fire\n       *@param server pushes requested to hosted server\n       *@param reliable will eventually get to the server\n       *@param WithValidation is when its specified with a server" },
+			};
+#endif
+			static const UE4CodeGen_Private::FFunctionParams FuncParams = { (UObject*(*)())Z_Construct_UClass_ASWeapon, "ServerFire", RF_Public|RF_Transient|RF_MarkAsNative, nullptr, (EFunctionFlags)0x80280CC0, 0, nullptr, 0, 0, 0, METADATA_PARAMS(Function_MetaDataParams, ARRAY_COUNT(Function_MetaDataParams)) };
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_ASWeapon_NoRegister()
 	{
@@ -38,6 +65,9 @@ void EmptyLinkFunctionForGeneratedCodeSWeapon() {}
 			static UObject* (*const DependentSingletons[])() = {
 				(UObject* (*)())Z_Construct_UClass_AActor,
 				(UObject* (*)())Z_Construct_UPackage__Script_CoopGame,
+			};
+			static const FClassFunctionLinkInfo FuncInfo[] = {
+				{ &Z_Construct_UFunction_ASWeapon_ServerFire, "ServerFire" }, // 1498128896
 			};
 #if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
@@ -148,7 +178,7 @@ void EmptyLinkFunctionForGeneratedCodeSWeapon() {}
 				&ASWeapon::StaticClass,
 				DependentSingletons, ARRAY_COUNT(DependentSingletons),
 				0x00900080u,
-				nullptr, 0,
+				FuncInfo, ARRAY_COUNT(FuncInfo),
 				PropPointers, ARRAY_COUNT(PropPointers),
 				nullptr,
 				&StaticCppClassTypeInfo,
@@ -159,7 +189,7 @@ void EmptyLinkFunctionForGeneratedCodeSWeapon() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASWeapon, 1505904794);
+	IMPLEMENT_CLASS(ASWeapon, 287136421);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASWeapon(Z_Construct_UClass_ASWeapon, &ASWeapon::StaticClass, TEXT("/Script/CoopGame"), TEXT("ASWeapon"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASWeapon);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

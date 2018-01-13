@@ -9,6 +9,7 @@
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "CoopGame.h"
 #include "TimerManager.h"
+#include "Net/UnrealNetwork.h"
 
 static int32 DebugWeaponDrawing = 0;
 FAutoConsoleVariableRef CVARDebugWeaponDrawing(
@@ -30,6 +31,7 @@ ASWeapon::ASWeapon()
 
 	RateOfFire = 600;
 
+	SetReplicates(true);
 }
 
 void ASWeapon::BeginPlay()
@@ -44,6 +46,11 @@ void ASWeapon::BeginPlay()
 void ASWeapon::Fire()
 {
 	// Trace the world, from pawn eyes to cross hair location
+
+	if (Role < ROLE_Authority)
+	{
+		ServerFire();
+	}
 
 	AActor* MyOwner = GetOwner();
 	if (MyOwner)
@@ -81,7 +88,6 @@ void ASWeapon::Fire()
 			}
 
 			UGameplayStatics::ApplyPointDamage(HitActor, ActualDamage, ShotDirection, Hit, MyOwner->GetInstigatorController(), this, DamageType);
-
 			
 			UParticleSystem* SelectedEffect = nullptr;
 			switch (SurfaceType)
@@ -110,8 +116,31 @@ void ASWeapon::Fire()
 
 		PlayFireEffects(TracerEndPoint);
 
+		if (Role == ROLE_Authority)
+		{
+			HitScanTrace.TraceTo = TracerEndPoint;
+		}
+
 		LastFireTime = GetWorld()->TimeSeconds;
 	}
+}
+
+void ASWeapon::OnRep_HitScanTrace()
+{
+	// Play cosmetic FX
+	PlayFireEffects(HitScanTrace.TraceTo);
+}
+
+void ASWeapon::ServerFire_Implementation()
+{
+	Fire();
+}
+
+// to validate the code to see if somethings wrong
+// if false clients get disconnected from server
+void ASWeapon::ServerFire_Validate()
+{
+	return true;
 }
 
 void ASWeapon::StartFire()
@@ -158,4 +187,11 @@ void ASWeapon::PlayFireEffects(FVector TraceEnd)
 			PC->ClientPlayCameraShake(FireCamShake);
 		}
 	}
+}
+
+void ASWeapon::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME_CONDITION(ASWeapon, HitScanTrace, COND_SkipOwner);
 }

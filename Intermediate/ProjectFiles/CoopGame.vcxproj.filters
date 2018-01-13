@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\CoopGame.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{1C5C2A8C-C26B-41B8-A884-D039D62927A8}</UniqueIdentifier>
+			<UniqueIdentifier>{5D0079FC-1564-437B-9993-FBBAECC1F57B}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\CoopGame.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{F7365E51-84CB-46D0-BF41-D7426CA4DDEF}</UniqueIdentifier>
+			<UniqueIdentifier>{83F000E3-07DC-4836-841E-53CE2B17B194}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -28,7 +28,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\CoopGame">
-			<UniqueIdentifier>{2359B842-A7F0-4ED4-B467-4AF55F946315}</UniqueIdentifier>
+			<UniqueIdentifier>{3FEE9DFD-91ED-4A17-9B8D-32C27ABAB095}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\CoopGame\CoopGame.Build.cs">
 			<Filter>Source\CoopGame</Filter>
@@ -46,9 +46,15 @@
 			<Filter>Source\CoopGame</Filter>
 		</ClInclude >
 		<Filter Include="Source\CoopGame\Private">
-			<UniqueIdentifier>{947C0DBA-7F99-4F7A-ABD7-7CC363C26723}</UniqueIdentifier>
+			<UniqueIdentifier>{9129DB18-3080-47BA-9D3F-FD43FCE017C5}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\CoopGame\Private\SCharacter.cpp">
+			<Filter>Source\CoopGame\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\CoopGame\Private\SExplosiveBarrel.cpp">
+			<Filter>Source\CoopGame\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\CoopGame\Private\SHealthComponent.cpp">
 			<Filter>Source\CoopGame\Private</Filter>
 		</ClCompile >
 		<ClCompile Include="..\..\Source\CoopGame\Private\SProjectileWeapon.cpp">
@@ -58,9 +64,15 @@
 			<Filter>Source\CoopGame\Private</Filter>
 		</ClCompile >
 		<Filter Include="Source\CoopGame\Public">
-			<UniqueIdentifier>{F309DD21-2FEA-4FBF-9CFC-9C9EB523F13C}</UniqueIdentifier>
+			<UniqueIdentifier>{83839106-6596-40F4-A1D7-E9F5778832B7}</UniqueIdentifier>
 		</Filter>
 		<ClInclude Include="..\..\Source\CoopGame\Public\SCharacter.h">
+			<Filter>Source\CoopGame\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\CoopGame\Public\SExplosiveBarrel.h">
+			<Filter>Source\CoopGame\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\CoopGame\Public\SHealthComponent.h">
 			<Filter>Source\CoopGame\Public</Filter>
 		</ClInclude >
 		<ClInclude Include="..\..\Source\CoopGame\Public\SProjectileWeapon.h">

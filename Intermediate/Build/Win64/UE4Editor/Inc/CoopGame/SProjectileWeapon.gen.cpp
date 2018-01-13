@@ -70,7 +70,7 @@ void EmptyLinkFunctionForGeneratedCodeSProjectileWeapon() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASProjectileWeapon, 1714996261);
+	IMPLEMENT_CLASS(ASProjectileWeapon, 3313051083);
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASProjectileWeapon(Z_Construct_UClass_ASProjectileWeapon, &ASProjectileWeapon::StaticClass, TEXT("/Script/CoopGame"), TEXT("ASProjectileWeapon"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASProjectileWeapon);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

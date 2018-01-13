@@ -13,8 +13,44 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define COOPGAME_SWeapon_generated_h
 
-#define CoopGame_Source_CoopGame_Public_SWeapon_h_16_RPC_WRAPPERS
-#define CoopGame_Source_CoopGame_Public_SWeapon_h_16_RPC_WRAPPERS_NO_PURE_DECLS
+#define CoopGame_Source_CoopGame_Public_SWeapon_h_16_RPC_WRAPPERS \
+	virtual bool ServerFire_Validate(); \
+	virtual void ServerFire_Implementation(); \
+ \
+	DECLARE_FUNCTION(execServerFire) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		if (!this->ServerFire_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("ServerFire_Validate")); \
+			return; \
+		} \
+		this->ServerFire_Implementation(); \
+		P_NATIVE_END; \
+	}
+
+
+#define CoopGame_Source_CoopGame_Public_SWeapon_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual bool ServerFire_Validate(); \
+	virtual void ServerFire_Implementation(); \
+ \
+	DECLARE_FUNCTION(execServerFire) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		if (!this->ServerFire_Validate()) \
+		{ \
+			RPC_ValidateFailed(TEXT("ServerFire_Validate")); \
+			return; \
+		} \
+		this->ServerFire_Implementation(); \
+		P_NATIVE_END; \
+	}
+
+
+#define CoopGame_Source_CoopGame_Public_SWeapon_h_16_EVENT_PARMS
+#define CoopGame_Source_CoopGame_Public_SWeapon_h_16_CALLBACK_WRAPPERS
 #define CoopGame_Source_CoopGame_Public_SWeapon_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASWeapon(); \
@@ -73,12 +109,16 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASWeapon); \
 	FORCEINLINE static uint32 __PPO__RateOfFire() { return STRUCT_OFFSET(ASWeapon, RateOfFire); }
 
 
-#define CoopGame_Source_CoopGame_Public_SWeapon_h_13_PROLOG
+#define CoopGame_Source_CoopGame_Public_SWeapon_h_13_PROLOG \
+	CoopGame_Source_CoopGame_Public_SWeapon_h_16_EVENT_PARMS
+
+
 #define CoopGame_Source_CoopGame_Public_SWeapon_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_PRIVATE_PROPERTY_OFFSET \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_RPC_WRAPPERS \
+	CoopGame_Source_CoopGame_Public_SWeapon_h_16_CALLBACK_WRAPPERS \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_INCLASS \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_STANDARD_CONSTRUCTORS \
 public: \
@@ -90,6 +130,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_PRIVATE_PROPERTY_OFFSET \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	CoopGame_Source_CoopGame_Public_SWeapon_h_16_CALLBACK_WRAPPERS \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_INCLASS_NO_PURE_DECLS \
 	CoopGame_Source_CoopGame_Public_SWeapon_h_16_ENHANCED_CONSTRUCTORS \
 private: \

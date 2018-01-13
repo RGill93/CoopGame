@@ -9,6 +9,7 @@
 class UCameraComponent;
 class USpringArmComponent;
 class ASWeapon;
+class USHealthComponent;
 
 UCLASS()
 class COOPGAME_API ASCharacter : public ACharacter
@@ -45,6 +46,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USpringArmComponent* SpringArmComp;
 
+	
+	USHealthComponent* HealthComp;
+
 	/*Checks if the player is aiming down sights*/
 	bool bWantsToZoom;
 
@@ -64,12 +68,21 @@ protected:
 	/*Function for when the begin ends zooming*/
 	void EndZoom();
 
+	UPROPERTY(Replicated)
 	ASWeapon* CurrentWeapon;
 
 	/*Function for player fire*/
 	void StartFire();
 
 	void StopFire();
+
+	UFUNCTION()
+	void OnHealthChanged(USHealthComponent* OwningHealthComp, float Health, float HealthDelta,
+		const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
+
+	/*Pawn died previously*/
+	UPROPERTY(BlueprintReadOnly, Category = "Player")
+	bool bDied;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Player")
 	TSubclassOf<ASWeapon> StarterWeaponClass;
