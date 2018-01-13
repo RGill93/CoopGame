@@ -19,7 +19,7 @@ struct FHitScanTrace
 public:
 
 	UPROPERTY()
-	FVector_NetQuantize TraceFrom;
+	TEnumAsByte<EPhysicalSurface> SurfaceType;
 
 	UPROPERTY()
 	FVector_NetQuantize TraceTo;
@@ -44,6 +44,8 @@ protected:
 	USkeletalMeshComponent* MeshComp;	
 
 	void PlayFireEffects(FVector TraceEnd);
+
+	void PlayImpactEffects(EPhysicalSurface SurfaceType, FVector ImpactPoint);
 
 	/*Damage of the actor*/
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
