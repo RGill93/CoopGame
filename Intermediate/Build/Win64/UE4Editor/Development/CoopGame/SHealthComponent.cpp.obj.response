@@ -26,6 +26,7 @@
 /I "C:\Program Files\Epic Games\UE_4.18\Engine\Source"
 /I C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Source
 /I C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Source\CoopGame\Public
+/I C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Source\CoopGame\Public\AI
 /I C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Inc\CoopGame
 /I C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Source\CoopGame
 /I "C:\Program Files\Epic Games\UE_4.18\Engine\Source\Runtime\Core\Public"

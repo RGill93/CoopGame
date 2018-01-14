@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\CoopGame.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{5D0079FC-1564-437B-9993-FBBAECC1F57B}</UniqueIdentifier>
+			<UniqueIdentifier>{D78390EF-B10D-4BB5-B1B4-DA7D587B9B06}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\CoopGame.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{83F000E3-07DC-4836-841E-53CE2B17B194}</UniqueIdentifier>
+			<UniqueIdentifier>{712AFE9D-846B-4498-8079-EE3C0080FE76}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -28,7 +28,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\CoopGame">
-			<UniqueIdentifier>{3FEE9DFD-91ED-4A17-9B8D-32C27ABAB095}</UniqueIdentifier>
+			<UniqueIdentifier>{FFF55AE8-F3A2-498F-8F19-7BA6092A599A}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\CoopGame\CoopGame.Build.cs">
 			<Filter>Source\CoopGame</Filter>
@@ -46,7 +46,7 @@
 			<Filter>Source\CoopGame</Filter>
 		</ClInclude >
 		<Filter Include="Source\CoopGame\Private">
-			<UniqueIdentifier>{9129DB18-3080-47BA-9D3F-FD43FCE017C5}</UniqueIdentifier>
+			<UniqueIdentifier>{5AFF1A43-5238-43B9-A55D-9315EB427BA3}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\CoopGame\Private\SCharacter.cpp">
 			<Filter>Source\CoopGame\Private</Filter>
@@ -63,8 +63,14 @@
 		<ClCompile Include="..\..\Source\CoopGame\Private\SWeapon.cpp">
 			<Filter>Source\CoopGame\Private</Filter>
 		</ClCompile >
+		<Filter Include="Source\CoopGame\Private\AI">
+			<UniqueIdentifier>{229DBFF2-EA49-40C5-821F-E42ED63BD5AF}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\CoopGame\Private\AI\STrackerBot.cpp">
+			<Filter>Source\CoopGame\Private\AI</Filter>
+		</ClCompile >
 		<Filter Include="Source\CoopGame\Public">
-			<UniqueIdentifier>{83839106-6596-40F4-A1D7-E9F5778832B7}</UniqueIdentifier>
+			<UniqueIdentifier>{AB7672AE-FD9F-4C0A-9726-CDF770548186}</UniqueIdentifier>
 		</Filter>
 		<ClInclude Include="..\..\Source\CoopGame\Public\SCharacter.h">
 			<Filter>Source\CoopGame\Public</Filter>
@@ -80,6 +86,12 @@
 		</ClInclude >
 		<ClInclude Include="..\..\Source\CoopGame\Public\SWeapon.h">
 			<Filter>Source\CoopGame\Public</Filter>
+		</ClInclude >
+		<Filter Include="Source\CoopGame\Public\AI">
+			<UniqueIdentifier>{9230107C-09D3-4972-A4BB-4D62B053BD56}</UniqueIdentifier>
+		</Filter>
+		<ClInclude Include="..\..\Source\CoopGame\Public\AI\STrackerBot.h">
+			<Filter>Source\CoopGame\Public\AI</Filter>
 		</ClInclude >
 	</ItemGroup>
 </Project>
