@@ -42,21 +42,14 @@ static inline void FOnHealthChangedSignature_DelegateWrapper(const FMulticastScr
 
 #define CoopGame_Source_CoopGame_Public_SHealthComponent_h_16_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execHandleTakeAnyDamage) \
+	DECLARE_FUNCTION(execHeal) \
 	{ \
-		P_GET_OBJECT(AActor,Z_Param_DamagedActor); \
-		P_GET_PROPERTY(UFloatProperty,Z_Param_Damage); \
-		P_GET_OBJECT(UDamageType,Z_Param_DamageType); \
-		P_GET_OBJECT(AController,Z_Param_InstigatedBy); \
-		P_GET_OBJECT(AActor,Z_Param_DamageCauser); \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_HealAmount); \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		this->HandleTakeAnyDamage(Z_Param_DamagedActor,Z_Param_Damage,Z_Param_DamageType,Z_Param_InstigatedBy,Z_Param_DamageCauser); \
+		this->Heal(Z_Param_HealAmount); \
 		P_NATIVE_END; \
-	}
-
-
-#define CoopGame_Source_CoopGame_Public_SHealthComponent_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	} \
  \
 	DECLARE_FUNCTION(execHandleTakeAnyDamage) \
 	{ \
@@ -68,6 +61,49 @@ static inline void FOnHealthChangedSignature_DelegateWrapper(const FMulticastScr
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
 		this->HandleTakeAnyDamage(Z_Param_DamagedActor,Z_Param_Damage,Z_Param_DamageType,Z_Param_InstigatedBy,Z_Param_DamageCauser); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_Health) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_OldHealth); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->OnRep_Health(Z_Param_OldHealth); \
+		P_NATIVE_END; \
+	}
+
+
+#define CoopGame_Source_CoopGame_Public_SHealthComponent_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHeal) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_HealAmount); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->Heal(Z_Param_HealAmount); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execHandleTakeAnyDamage) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_DamagedActor); \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_Damage); \
+		P_GET_OBJECT(UDamageType,Z_Param_DamageType); \
+		P_GET_OBJECT(AController,Z_Param_InstigatedBy); \
+		P_GET_OBJECT(AActor,Z_Param_DamageCauser); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->HandleTakeAnyDamage(Z_Param_DamagedActor,Z_Param_Damage,Z_Param_DamageType,Z_Param_InstigatedBy,Z_Param_DamageCauser); \
+		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execOnRep_Health) \
+	{ \
+		P_GET_PROPERTY(UFloatProperty,Z_Param_OldHealth); \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		this->OnRep_Health(Z_Param_OldHealth); \
 		P_NATIVE_END; \
 	}
 
