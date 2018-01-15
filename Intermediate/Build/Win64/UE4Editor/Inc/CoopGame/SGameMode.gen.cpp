@@ -5,27 +5,27 @@
 ===========================================================================*/
 
 #include "GeneratedCppIncludes.h"
-#include "CoopGameGameModeBase.h"
+#include "Public/SGameMode.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
 #endif
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-void EmptyLinkFunctionForGeneratedCodeCoopGameGameModeBase() {}
+void EmptyLinkFunctionForGeneratedCodeSGameMode() {}
 // Cross Module References
-	COOPGAME_API UClass* Z_Construct_UClass_ACoopGameGameModeBase_NoRegister();
-	COOPGAME_API UClass* Z_Construct_UClass_ACoopGameGameModeBase();
+	COOPGAME_API UClass* Z_Construct_UClass_ASGameMode_NoRegister();
+	COOPGAME_API UClass* Z_Construct_UClass_ASGameMode();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_CoopGame();
 // End Cross Module References
-	void ACoopGameGameModeBase::StaticRegisterNativesACoopGameGameModeBase()
+	void ASGameMode::StaticRegisterNativesASGameMode()
 	{
 	}
-	UClass* Z_Construct_UClass_ACoopGameGameModeBase_NoRegister()
+	UClass* Z_Construct_UClass_ASGameMode_NoRegister()
 	{
-		return ACoopGameGameModeBase::StaticClass();
+		return ASGameMode::StaticClass();
 	}
-	UClass* Z_Construct_UClass_ACoopGameGameModeBase()
+	UClass* Z_Construct_UClass_ASGameMode()
 	{
 		static UClass* OuterClass = nullptr;
 		if (!OuterClass)
@@ -37,16 +37,16 @@ void EmptyLinkFunctionForGeneratedCodeCoopGameGameModeBase() {}
 #if WITH_METADATA
 			static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
 				{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering Utilities|Transformation" },
-				{ "IncludePath", "CoopGameGameModeBase.h" },
-				{ "ModuleRelativePath", "CoopGameGameModeBase.h" },
+				{ "IncludePath", "SGameMode.h" },
+				{ "ModuleRelativePath", "Public/SGameMode.h" },
 				{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 			};
 #endif
 			static const FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
-				TCppClassTypeTraits<ACoopGameGameModeBase>::IsAbstract,
+				TCppClassTypeTraits<ASGameMode>::IsAbstract,
 			};
 			static const UE4CodeGen_Private::FClassParams ClassParams = {
-				&ACoopGameGameModeBase::StaticClass,
+				&ASGameMode::StaticClass,
 				DependentSingletons, ARRAY_COUNT(DependentSingletons),
 				0x00900288u,
 				nullptr, 0,
@@ -60,9 +60,9 @@ void EmptyLinkFunctionForGeneratedCodeCoopGameGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACoopGameGameModeBase, 3903563277);
-	static FCompiledInDefer Z_CompiledInDefer_UClass_ACoopGameGameModeBase(Z_Construct_UClass_ACoopGameGameModeBase, &ACoopGameGameModeBase::StaticClass, TEXT("/Script/CoopGame"), TEXT("ACoopGameGameModeBase"), false, nullptr, nullptr, nullptr);
-	DEFINE_VTABLE_PTR_HELPER_CTOR(ACoopGameGameModeBase);
+	IMPLEMENT_CLASS(ASGameMode, 1045027408);
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ASGameMode(Z_Construct_UClass_ASGameMode, &ASGameMode::StaticClass, TEXT("/Script/CoopGame"), TEXT("ASGameMode"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ASGameMode);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER
 #pragma warning (pop)

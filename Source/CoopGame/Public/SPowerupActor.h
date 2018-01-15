@@ -42,7 +42,6 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Powerups")
 	void OnPowerupStateChanged(bool bNewIsActive);
 
-
 public:	
 
 	void ActivatePowerup(AActor* ActiveFor);
