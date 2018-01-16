@@ -16,15 +16,15 @@
 	},
 	"BuildProducts": [
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-CoopGame-5250.dll",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-CoopGame-1048.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-CoopGame-5250.pdb",
+			"Path": "$(ProjectDir)/Binaries/Win64/UE4Editor-CoopGame-1048.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-CoopGame-5250.lib",
+			"Path": "$(ProjectDir)/Intermediate/Build/Win64/UE4Editor/Development/UE4Editor-CoopGame-1048.lib",
 			"Type": "ImportLibrary"
 		},
 		{

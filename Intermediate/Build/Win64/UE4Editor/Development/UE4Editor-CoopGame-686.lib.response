@@ -1,0 +1,32 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-CoopGame-686.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\CoopGame.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SCharacter.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SExplosiveBarrel.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SGameMode.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SHealthComponent.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SPickupActor.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SPowerupActor.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SProjectileWeapon.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SWeapon.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\STrackerBot.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\CoopGame.init.gen.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SCharacter.gen.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SExplosiveBarrel.gen.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SGameMode.gen.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SHealthComponent.gen.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SPickupActor.gen.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SPowerupActor.gen.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SProjectileWeapon.gen.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\STrackerBot.gen.cpp.obj"
+"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\SWeapon.gen.cpp.obj"
+"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoopGame\PCLaunch.rc.res"
+"C:\Program Files\Epic Games\UE_4.18\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
+/OUT:"C:\Users\Randa\OneDrive\Documents\GitHub\CoopGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-CoopGame-686.lib"

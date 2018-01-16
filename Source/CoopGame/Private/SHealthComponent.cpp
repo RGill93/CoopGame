@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "SHealthComponent.h"
+#include "SGameMode.h"
 #include "Net/UnrealNetwork.h"
 
 
@@ -10,6 +11,7 @@ USHealthComponent::USHealthComponent()
 	// Setting up player health
 
 	DefaultHealth = 100;
+	bIsDead = false;
 
 	SetIsReplicated(true);
 
@@ -46,7 +48,7 @@ void USHealthComponent::OnRep_Health(float OldHealth)
 void USHealthComponent::HandleTakeAnyDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType, class AController* InstigatedBy, 
 	AActor* DamageCauser)
 {
-	if (Damage <= 0.0f)
+	if (Damage <= 0.0f || bIsDead)
 	{
 		return;
 	}
@@ -56,9 +58,20 @@ void USHealthComponent::HandleTakeAnyDamage(AActor* DamagedActor, float Damage, 
 
 	UE_LOG(LogTemp, Log, TEXT("Health Changed: %s"), *FString::SanitizeFloat(Health));
 
+	bIsDead = Health <= 0.0f;
+
 	OnHealthChanged.Broadcast(this, Health, Damage, DamageType, InstigatedBy, DamageCauser);
 
+	if (bIsDead)
+	{
+		ASGameMode* GM = Cast<ASGameMode>(GetWorld()->GetAuthGameMode());
+		if (GM)
+		{
+			GM->OnActorKilled.Broadcast(GetOwner(), DamageCauser, InstigatedBy);
+		}
+	}	
 }
+
 
 // method for health regeneration for health power up
 void USHealthComponent::Heal(float HealAmount)
@@ -80,4 +93,9 @@ void USHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
 	DOREPLIFETIME(USHealthComponent, Health);
+}
+
+float USHealthComponent::GetHealth() const
+{
+	return Health;
 }

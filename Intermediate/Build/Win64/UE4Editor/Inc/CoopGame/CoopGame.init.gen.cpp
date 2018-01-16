@@ -11,6 +11,7 @@
 #endif
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCoopGame_init() {}
+	COOPGAME_API UFunction* Z_Construct_UDelegateFunction_CoopGame_OnActorKilled__DelegateSignature();
 	COOPGAME_API UFunction* Z_Construct_UDelegateFunction_CoopGame_OnHealthChangedSignature__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_CoopGame()
 	{
@@ -18,13 +19,14 @@ void EmptyLinkFunctionForGeneratedCodeCoopGame_init() {}
 		if (!ReturnPackage)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_CoopGame_OnActorKilled__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_CoopGame_OnHealthChangedSignature__DelegateSignature,
 			};
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/CoopGame",
 				PKG_CompiledIn | 0x00000000,
-				0x27E7B2D1,
-				0xBDA1180B,
+				0x3CE9C815,
+				0x9B903E7C,
 				SingletonFuncArray, ARRAY_COUNT(SingletonFuncArray),
 				METADATA_PARAMS(nullptr, 0)
 			};
