@@ -69,12 +69,7 @@ protected:
 	void EndZoom();
 
 	UPROPERTY(Replicated)
-	ASWeapon* CurrentWeapon;
-
-	/*Function for player fire*/
-	void StartFire();
-
-	void StopFire();
+	ASWeapon* CurrentWeapon;	
 
 	UFUNCTION()
 	void OnHealthChanged(USHealthComponent* OwningHealthComp, float Health, float HealthDelta,
@@ -103,5 +98,12 @@ public:
 	 * @return players eye location
 	 */
 	virtual FVector GetPawnViewLocation() const override;
+
+	/*Function for player fire*/
+	UFUNCTION(BlueprintCallable, Category = "Player")
+	void StartFire();
+
+	UFUNCTION(BlueprintCallable, Category = "Player")
+	void StopFire();
 		
 };

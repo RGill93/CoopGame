@@ -96,6 +96,10 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
 	float RateOfFire;
 
+	// Bullet Spread in degrees
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon", meta = (ClampMin=0.0f))
+	float BulletSpread;
+
 	// Derived from rate of fire
 	float TimeBetweenShots;
 
